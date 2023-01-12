@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function sumAndMinOdd(nums) {
+        const oddNums = nums.filter((num) => num % 2 === 1);
+        return {
+          sum: oddNums.reduce((acc, curr) => acc + curr, 0),
+          minOdd: Math.min(...oddNums),
+        };
+      }
+
+      arr = [12, 77, 38, 41, 53, 92, 85];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
