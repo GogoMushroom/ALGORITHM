@@ -5,12 +5,11 @@
   </head>
   <body>
     <script>
-      function solution(arr) {
-        let answer = Math.max(...arr);
-        return answer;
+      function solution(s) {
+        let ans = s.sort((a, b) => b.length - a.length);
+        return ans[0];
       }
-
-      let str = "BANANA";
+      let str = ["teacher", "time", "student", "beautiful", "good"];
       console.log(solution(str));
     </script>
   </body>

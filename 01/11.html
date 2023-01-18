@@ -5,12 +5,16 @@
   </head>
   <body>
     <script>
-      function solution(arr) {
-        let answer = Math.max(...arr);
+      function solution(s) {
+        let answer = 0;
+        for (let x of s) {
+          let num = x.charCodeAt();
+          if (num >= 65 && num <= 90) answer++;
+        }
         return answer;
       }
 
-      let str = "BANANA";
+      let str = "KoreaTimeGood";
       console.log(solution(str));
     </script>
   </body>
