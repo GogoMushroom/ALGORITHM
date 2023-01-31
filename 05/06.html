@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer;
+        let sH = new Map();
+        //Map은 key 와 value 로 이루어진 배열
+        for (let x of s) {
+          // for of... , let 대신 const 를 사용해도됨
+          if (sH.has(x))
+            //Map 객체 sH 에 x가 key 인 value 가 있는지
+            sH.set(x, sH.get(x) + 1);
+          // x가 key 인 value 를 가져와서 sH.get(x) + 1 을 해라
+          else sH.set(x, 1);
+          // 없으면 1
+        }
+        let max = Number.MIN_SAFE_INTEGER;
+        //MIN_SAFE_INTEGER를 사용해야지 첫번쨰 숫자가 max 로 들어감
+        for (let [key, val] of sH) {
+          if (val > max) {
+            max = val;
+            answer = key;
+          }
+        }
+        return answer;
+      }
+
+      let str = "BACBACCACCBDEDE";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>

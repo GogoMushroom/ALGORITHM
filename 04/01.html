@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, arr) {
+        let sum = arr.map((arr) => {
+          return arr
+            .toString()
+            .split("")
+            .reduce((a, b) => a + Number(b), 0);
+        });
+        return arr[sum.indexOf(Math.max(...sum))];
+      }
+
+      let arr = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(7, arr));
+    </script>
+  </body>
+</html>
