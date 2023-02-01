@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        //여는괄호는 시작점
+        // () 레이저 닫는괄호를 만났을 때 바로 앞에 여는 괄호가 있으면 레이저
+        // )) 닫는 괄호를 만났을 떄 앞에 있는 괄호가 닫는 괄호라면 막대기
+        // 괄호수 = 막대기 수
+        let answer = 0;
+        let stack = [];
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === "(") stack.push("(");
+          //여는 괄호 = 스택에 넣기
+          else {
+            //닫는괗로 = 스택에서 빼기
+            stack.pop();
+            if (s[i - 1] === "(") answer += stack.length;
+            // 닫는괄호 전의 괄호가 닫는 괄호일 때 + 해주기
+            else answer++;
+          }
+        }
+        return answer;
+      }
+
+      let a = "()(((()())(())()))(())";
+      console.log(solution(a));
+    </script>
+  </body>
+</html>
